@@ -30,3 +30,7 @@ coverage/
 
 # OS generated files
 Thumbs.db
+ProductApiBackend/package-lock.json
+ProductApiBackend/.gitignore
+ProductApiBackend/index.js
+ProductApiBackend/package-lock.json
