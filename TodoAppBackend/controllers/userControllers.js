@@ -52,6 +52,22 @@ export const createUser = async (req, res) => {
      }
 }
 
+const loginUser = async (req, res) => {
+     try {
+          const { email, password } = req.body
+          if(!email && !password){}
+          const findUser = await User.findOne(email)
+          if(!findUser) return res.status(404)
+     } catch (error) {
+          console.log(`Some Error occured while login user: ${error.message}`);
+          res.status(500).json({
+               success: false,
+               message: `Some error occured while login user ${error.message}`
+          })
+
+     }
+}
+
 export const fetchSingleUser = async (req, res) => {
      try {
           const userId = req.user.id
